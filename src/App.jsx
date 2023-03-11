@@ -5,12 +5,10 @@ import InputField from './components/Input field/InputField'
 function App() {
   const [tasks, setTasks] = useState([])
 
-  console.log(tasks)
-
   return (
     <div className=" bg-neutral-800 text-white h-[100vh] px-10 py-6">
         <InputField setTasks={setTasks} />
-        <Container arrayOfTasks={tasks}/>
+        <Container tasks={tasks}/>
     </div>
   )
 }

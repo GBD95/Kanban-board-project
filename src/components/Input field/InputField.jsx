@@ -18,6 +18,7 @@ const InputField = (props) => {
             }
             ]
         })
+        setInputValue('')
     }
 
   return (
