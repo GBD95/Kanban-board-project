@@ -1,17 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Card = (props) => {
-  console.log(props.task)
-  const [position, setPosition] = useState(props.task.position);
-  
-  const changePosition = () => {
-    setPosition('In Progress')
-  };
-  return (<div className='flex'>
-      <div>{props.text}</div>
-      <button onClick={changePosition} className=' bg-slate-200 text-black'>{"=>"}</button>
-  </div>
-  )
-}
+  return (
+    <div className='flex'>
+      {props.position === "Ready" ? null : (
+        <button
+          onClick={() => {
+            props.move(props.id, "left");
+          }}
+          className=' bg-slate-200 text-black'
+        >
+          {"<="}
+        </button>
+      )}
+      <div>{props.value}</div>
+      {props.position === "Done" ? null : (
+        <button
+          onClick={() => {
+            props.move(props.id, "right");
+          }}
+          className=' bg-slate-200 text-black'
+        >
+          {"=>"}
+        </button>
+      )}
+    </div>
+  );
+};
 
-export default Card
+export default Card;

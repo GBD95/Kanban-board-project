@@ -1,21 +1,26 @@
-import React from 'react'
-import Card from './Card'
+import React from "react";
+import Card from "./Card";
 
 const Column = (props) => {
-
-
-
   return (
     <div className=' bg-slate-800 rounded-md p-4'>
-        <h1>{props.title}</h1>
-        <hr />
-        {props.tasks.map((task) => {
-          if(props.title === task.position){
-            return <Card text={task.value} task={task}/>
-          }
-        })}
+      <h1>{props.title}</h1>
+      <hr />
+      {props.tasks.map((task) => {
+        if (props.title === task.position) {
+          return (
+            <Card
+              value={task.value}
+              position={task.position}
+              id={task.id}
+              key={task.id}
+              move={props.move}
+            />
+          );
+        }
+      })}
     </div>
-  )
-}
+  );
+};
 
-export default Column
+export default Column;
