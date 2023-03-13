@@ -23,7 +23,7 @@ function App() {
   };
 
   return (
-    <div className=' bg-neutral-800 text-white h-[100vh] px-10 py-6'>
+    <div className=' bg-neutral-700 text-white h-[100vh] px-10 py-6'>
       <InputField setTasks={setTasks} />
       <Container tasks={tasks} move={changePosition} />
     </div>
