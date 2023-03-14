@@ -14,7 +14,16 @@ const Card = (props) => {
         </button>
       )}
       <div className='w-full flex justify-center items-center'>{props.value}</div>
-      {props.position === "Done" ? null : (
+      {props.position === "Done" ? (
+        <button
+          onClick={() => {
+            props.move(props.id, "trash");
+          }}
+          className=' bg-red-600 text-white rounded-r-md text-xl p-2 flex justify-center items-center'
+        >
+          <ion-icon name='trash-outline'></ion-icon>
+        </button>
+      ) : (
         <button
           onClick={() => {
             props.move(props.id, "right");
